@@ -1,0 +1,51 @@
+{
+    "name": "nestjs-basic-redis",
+    "version": "0.0.1",
+    "description": "Lightweight NestJS Redis integration featuring dynamic module setup, helper service, and optional base controller.",
+    "keywords": [
+        "nestjs",
+        "redis",
+        "ioredis",
+        "cache",
+        "nex",
+        "service",
+        "controller"
+    ],
+    "files": [
+        "recipes/nestjs-basic-redis",
+        "src/common",
+        "src/modules"
+    ],
+    "setup": {
+        "scripts": [
+            "bun add ioredis"
+        ],
+        "files": {
+            "recipes/nestjs-basic-redis": {
+                "constants": {
+                    "redis.constants.ts": "recipes/nestjs-basic-redis/constants"
+                },
+                "README.md": "recipes/nestjs-basic-redis"
+            },
+            "src/common/services": {
+                "redis-basic.service.ts": "src/common/services"
+            },
+            "src/modules/redis": {
+                "redis.module.ts": "src/modules/redis"
+            }
+        },
+        "variants": [
+            {
+                "name": "with-controller",
+                "description": "Includes a pre-configured generic RedisController for REST endpoints.",
+                "setup": {
+                    "files": {
+                        "src/common/controllers": {
+                            "redis-basic.controller.ts": "src/common/controllers"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
