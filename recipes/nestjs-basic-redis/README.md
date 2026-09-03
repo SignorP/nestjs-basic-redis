@@ -31,7 +31,7 @@ src/
 │   ├── services/
 │   │   └── redis-basic.service.ts   # Core RedisService implementation
 │   └── controllers/
-│       └── redis-basic.controller.ts# Generic RedisController (Variant: with-controller)
+│       └── redis-basic.controller.ts # Generic RedisController (Variant: with-controller)
 └── modules/
     └── redis/
         └── redis.module.ts          # Dynamic NestJS RedisModule definition
@@ -44,11 +44,7 @@ src/
 Run the Nex CLI installer in your NestJS project directory:
 
 ```bash
-# Standard installation (Module + Service + Constants)
-xnex recipe add nestjs-basic-redis
-
-# Installation with pre-configured REST Controller
-xnex recipe add nestjs-basic-redis --variant with-controller
+xnex install nestjs-basic-redis
 ```
 
 *The installer automatically installs the `ioredis` dependency using Bun or your preferred package manager.*
